@@ -2,7 +2,7 @@
 
 ### Primer parte - Pedimos los episodios donde aparece un personaje (Complejidad: 2)
 
-- [ ] Mostrar listado de episodios en la vista del personaje /character/:id, y cualquier otra información que sea relevante
+- [ok] Mostrar listado de episodios en la vista del personaje /character/:id, y cualquier otra información que sea relevante
 - [ ] El listado tiene que ser paginado, y poder pedir episodios por página
 
   Hint: Usar el argumento page de la query episodes, usando variables de GraphQL junto al estado de React
