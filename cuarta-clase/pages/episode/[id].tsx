@@ -28,18 +28,22 @@ function CharacterPage() {
   const { characters, name, air_date } = data.episode;
 
   return (
-    <Stack flexDirection="column" alignItems="center" spacing={20} width={1000}>
+    <Stack
+      flexDirection="column"
+      alignItems="center"
+      spacing={20}
+      width={1000}
+      color="white"
+    >
       <Stack>
-        <Text color="white" fontSize="5xl" fontWeight="extrabold">
+        <Text fontSize="5xl" fontWeight="extrabold">
           {name}
         </Text>
-        <Text color="white" fontSize="lg">
-          Air Date: {air_date.split("T")[0]}
-        </Text>
+        <Text fontSize="lg">Air Date: {air_date.split("T")[0]}</Text>
       </Stack>
 
       <Stack spacing={5}>
-        <Text color="white" fontSize="4xl" fontWeight="extrabold">
+        <Text fontSize="4xl" fontWeight="extrabold">
           Characters
         </Text>
 
@@ -66,11 +70,7 @@ function CharacterPage() {
                       _hover={{ transform: "translateY(-1px)" }}
                     />
                   </Box>
-                  <Text
-                    color="white"
-                    fontSize="lg"
-                    _hover={{ color: "cyan.300" }}
-                  >
+                  <Text fontSize="lg" _hover={{ color: "cyan.300" }}>
                     {c.name}
                   </Text>
                 </Stack>

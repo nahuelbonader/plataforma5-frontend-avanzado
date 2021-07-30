@@ -42,37 +42,34 @@ function CharacterPage() {
   } = data.character;
 
   return (
-    <Stack flexDirection="column" alignItems="flex-start" spacing={20}>
+    <Stack
+      flexDirection="column"
+      alignItems="flex-start"
+      spacing={20}
+      color="white"
+    >
       <Stack flexDirection="row" alignItems="center">
         <Image src={image} alt={name} borderRadius={8} />
 
         <Stack spacing={10} width={500} paddingLeft={20}>
           <Stack>
-            <Text color="white" fontSize="3xl" fontWeight="extrabold">
+            <Text fontSize="3xl" fontWeight="extrabold">
               {name}
             </Text>
             <Status species={species} status={status} />
           </Stack>
 
           <Stack spacing={0}>
-            <Text color="white" fontSize="xl">
-              Type: {type}
-            </Text>
-            <Text color="white" fontSize="xl">
-              Gender: {gender}
-            </Text>
-            <Text color="white" fontSize="xl">
-              Origin: {origin.name}
-            </Text>
-            <Text color="white" fontSize="xl">
-              Location: {location.name}
-            </Text>
+            <Text fontSize="xl">Type: {type}</Text>
+            <Text fontSize="xl">Gender: {gender}</Text>
+            <Text fontSize="xl">Origin: {origin.name}</Text>
+            <Text fontSize="xl">Location: {location.name}</Text>
           </Stack>
         </Stack>
       </Stack>
 
       <Stack>
-        <Text color="white" fontSize="3xl" fontWeight="extrabold">
+        <Text fontSize="3xl" fontWeight="extrabold">
           Episodes
         </Text>
 
@@ -87,7 +84,6 @@ function CharacterPage() {
               <CircleIcon boxSize={3} color="gray.500" marginRight={3} />
               <Link href={`/episode/${e.id}`}>
                 <Text
-                  color="white"
                   fontSize="lg"
                   cursor="pointer"
                   marginTop={0}
