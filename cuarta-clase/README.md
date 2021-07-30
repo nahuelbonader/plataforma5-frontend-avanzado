@@ -2,10 +2,7 @@
 
 ### Primer parte - Pedimos los episodios donde aparece un personaje (Complejidad: 2)
 
-- [ok] Mostrar listado de episodios en la vista del personaje /character/:id, y cualquier otra información que sea relevante
-- [ ] El listado tiene que ser paginado, y poder pedir episodios por página
-
-  Hint: Usar el argumento page de la query episodes, usando variables de GraphQL junto al estado de React
+- [ ] Mostrar listado de episodios en la vista del personaje /character/:id, y cualquier otra información que sea relevante
 
 ### Segunda Parte - Mostramos una vista con toda la información de ese episodio (Complejidad: 3)
 
@@ -22,6 +19,12 @@
       https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
       https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
       https://formidable.com/open-source/urql/docs/advanced/server-side-rendering/#using-getstaticprops-or-getserversideprops
+
+### Opcional - Armar paginado de personajes en la Homa pages
+
+- [ ] El listado tiene que ser paginado, y poder pedir episodios por página
+
+  Hint: Usar el argumento page de la query episodes, usando variables de GraphQL junto al estado de React
 
 ## Links
 

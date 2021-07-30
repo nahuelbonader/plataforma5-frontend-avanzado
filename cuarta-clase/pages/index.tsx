@@ -4,6 +4,9 @@ import random from "lodash.random";
 import { Fragment, useMemo } from "react";
 import { Stack, Text, Image, Spinner } from "@chakra-ui/react";
 
+// queries
+import { RandomCharactersQuery } from "../queries";
+
 type CardProps = {
   id: string;
   imageLink: string;
@@ -23,10 +26,6 @@ function Card({
   lastLocation,
   firstSeenIn,
 }: CardProps) {
-  {
-    /* TODO: Solve minWidth to flexBasis */
-  }
-
   return (
     <Link href={`/character/${id}`}>
       <Stack
@@ -107,24 +106,6 @@ function createRandomCharacterIds(length: number) {
 
   return Array.from({ length }, generateRandomNumber);
 }
-
-const RandomCharactersQuery = `
-  query ($randomCharactersIds: [ID!]!) {
-    charactersByIds(ids: $randomCharactersIds) {
-      id
-      image
-      name
-      status
-      species
-      location {
-        name
-      }
-      episode {
-        name
-      }
-    }
-  }
-`;
 
 export default function Home() {
   // constants

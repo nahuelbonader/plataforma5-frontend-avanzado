@@ -1,34 +1,14 @@
+import Link from "next/link";
 import { useQuery } from "urql";
 import { useRouter } from "next/router";
+import { Stack, Text, Image } from "@chakra-ui/react";
+
+// queries
+import { SingleCharacterQuery } from "../../queries";
+
+// components
 import { Status } from "../../components/Status";
 import { CircleIcon } from "../../commons/CircleIcon";
-import { Stack, Text, Image, List, ListItem } from "@chakra-ui/react";
-import Link from "next/link";
-
-const SingleCharacterQuery = `
-  query ($characterId: ID!) {
-    character(id: $characterId) {
-      id
-      name
-      status
-      species
-      type
-      gender
-      origin {
-        name
-      }
-      location {
-        name
-      }
-      image
-      episode {
-        id
-        name
-      }
-      created
-    }
-  }
-`;
 
 function CharacterPage() {
   // next hooks
@@ -36,7 +16,6 @@ function CharacterPage() {
 
   // constants
   const { id } = query;
-  console.log("\n ~ CharacterPage ~ id", id);
 
   // urql hooks
   const [result] = useQuery({
@@ -45,14 +24,12 @@ function CharacterPage() {
   });
 
   const { data, fetching: isLoading, error } = result;
-  console.log("\n ~ CharacterPage ~ data", data);
 
   if (isLoading || error) {
     return null;
   }
 
   const {
-    created,
     episode,
     gender,
     image,
@@ -90,9 +67,6 @@ function CharacterPage() {
             <Text color="white" fontSize="xl">
               Location: {location.name}
             </Text>
-            <Text color="white" fontSize="xl">
-              Created: {created.split("T")[0]}
-            </Text>
           </Stack>
         </Stack>
       </Stack>
@@ -104,9 +78,14 @@ function CharacterPage() {
 
         <Stack paddingLeft={4}>
           {episode.map((e) => (
-            <Stack flexDirection="row" alignItems="center" spacing={0}>
+            <Stack
+              flexDirection="row"
+              alignItems="center"
+              spacing={0}
+              key={e.id}
+            >
               <CircleIcon boxSize={3} color="gray.500" marginRight={3} />
-              <Link href={`/episodes/${e.id}`}>
+              <Link href={`/episode/${e.id}`}>
                 <Text
                   color="white"
                   fontSize="lg"
